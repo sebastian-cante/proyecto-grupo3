@@ -7,7 +7,7 @@ router.get('/register', function(req, res, next) {
   res.render('register');
 });
 
-router.get('/logIn', function(req, res, next) {
-  res.render('logIn');
+router.get('/login', function(req, res, next) {
+  res.render('login');
 });
 module.exports = router;
