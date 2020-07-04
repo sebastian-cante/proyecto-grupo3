@@ -1,5 +1,5 @@
 body {
-  background-color: #E3E3E3; 
+  background-color: lightgrey; 
 }
 
 .titulo {
@@ -72,10 +72,46 @@ body {
 }
 
 
-
 .logo {
   width: 75%;
   margin-top: -60px;
   margin-left:-350px;
 }
 
+
+.card{
+  margin: 0 30px;
+  
+}
+
+.card-body{
+  background-color: lightgray;
+  
+}
+
+.card-body-products{
+  background-color: royalblue;
+  
+}
+
+.card-text-2{
+  text-align: right;
+}
+
+.products-title{
+  text-align: center;
+}
+
+.card-group{
+  width: 80%;
+  margin: 0 auto;
+  
+}
+
+.footer{
+  margin-top: 20px;
+}
+
+.btn-secondary{
+  text-align: center;
+}
