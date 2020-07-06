@@ -121,8 +121,17 @@ body {
   padding: 0 auto;
   
 }
+<<<<<<< HEAD
 .icon{
   width: 5%;
   margin-left: 2%;
   font-size: 30px
+=======
+
+.form-control{
+  width: 25%;
+}
+.formulario{
+  margin-left: 40px
+>>>>>>> a9bd64e17b23c2192c2a5fe213af13d5e788cb3a
 }
