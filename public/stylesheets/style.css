@@ -122,3 +122,10 @@ body {
   padding: 0 auto;
   
 }
+
+.form-control{
+  width: 25%;
+}
+.formulario{
+  margin-left: 40px
+}

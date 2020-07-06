@@ -10,4 +10,9 @@ router.get('/register', function(req, res, next) {
 router.get('/login', function(req, res, next) {
   res.render('login');
 });
+
+router.get('/contacto', function(req, res, next) {
+  res.render('contact');
+});
+
 module.exports = router;
