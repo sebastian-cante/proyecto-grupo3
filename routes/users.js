@@ -1,18 +1,17 @@
 var express = require('express');
 var router = express.Router();
-
+var {check, validationResult, body} = require('express-validator')
+var usersController = require('../controllers/usersController')
 /* GET users listing. */
 
-router.get('/register', function(req, res, next) {
-  res.render('register');
-});
+router.get('/register', usersController.register);
 
-router.get('/login', function(req, res, next) {
-  res.render('login');
-});
+router.post('/register', usersController.create)
 
-router.get('/contacto', function(req, res, next) {
-  res.render('contact');
-});
+router.get('/login', usersController.logIn);
+
+router.post('/login', usersController.logued)
+
+router.get('/contacto', usersController.contact);
 
 module.exports = router;
