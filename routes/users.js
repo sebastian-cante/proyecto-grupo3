@@ -2,10 +2,11 @@ var express = require('express');
 var router = express.Router();
 var {check, validationResult, body} = require('express-validator')
 var usersController = require('../controllers/usersController')
-var fs = require('fs')
+var fs = require('fs');
+const guestMiddleware = require('../middlewares/guestMiddleware');
 /* GET users listing. */
 
-router.get('/register', usersController.register);
+router.get('/register', guestMiddleware, usersController.register);
 
 router.post('/register', [
     check('user').isLength({min : 1}).withMessage('Debe tener un nombre de Usuario'),
@@ -30,7 +31,7 @@ router.post('/register', [
     }).withMessage('Usuario ya existente')
 ], usersController.create)
 
-router.get('/login', usersController.logIn);
+router.get('/login', guestMiddleware, usersController.logIn);
 
 router.post('/login', usersController.logued)
 

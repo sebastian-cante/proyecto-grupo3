@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var productsController = require('../controllers/productsController');
+const authMiddleware = require('../middlewares/authMiddleware');
 let multer = require("multer");
 let path = require("path");
 
@@ -23,7 +24,7 @@ router.get('/alta', productsController.alta);
 
 router.post('/alta', upload.any(), productsController.subido);
 
-router.get('/carrito', productsController.carrito);
+router.get('/carrito', authMiddleware, productsController.carrito);
 
 
 module.exports= router
