@@ -1,32 +1,39 @@
 var fs = require('fs')
-var bcrypt = require('bcrypt')
+var bcrypt = require('bcrypt');
+const {check, validationResult, body } = require('express-validator');
 
 
 let controller = {
     register : function(req, res, next) {
         res.render('register');
-      },
+    },
     create : function(req, res, next){
-        let user = {
-            email : req.body.email,
-            password : bcrypt.hashSync(req.body.password, 10),
-        }
-        let usersFile = fs.readFileSync('users.json', {encoding : 'utf-8'})
-        let users
-        if(usersFile == ""){
-            users = []
+        let errors = validationResult(req)
+        if(errors.isEmpty()){
+            let user = {
+                email : req.body.email,
+                password : bcrypt.hashSync(req.body.password, 10),
+            }
+            let usersFile = fs.readFileSync('users.json', {encoding : 'utf-8'})
+            let users
+            if(usersFile == ""){
+                users = []
+            }
+            else{
+                users = JSON.parse(usersFile)
+            }
+            users.push(user)
+            usersJson = JSON.stringify(users)
+            fs.writeFileSync('users.json', usersJson)
+            res.redirect('../')
         }
         else{
-            users = JSON.parse(usersFile)
+            return res.render('register', {errors : errors.errors})
         }
-        users.push(user)
-        usersJson = JSON.stringify(users)
-        fs.writeFileSync('users.json', usersJson)
-        res.redirect('../')
-      },
+    },
     logIn : function(req, res, next) {
         res.render('login');
-      },
+    },
     logued : function(req, res, next){
         let usersFile = fs.readFileSync('users.json', {encoding : 'utf-8'})
         let users
@@ -47,8 +54,8 @@ let controller = {
     },
     contact : function(req, res, next) {
         res.render('contact');
-      }
-      
+    }
+    
 }
 
 

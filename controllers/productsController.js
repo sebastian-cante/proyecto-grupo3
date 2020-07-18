@@ -10,6 +10,9 @@ let controller = {
     alta : function(req, res, next) {
         res.render('alta');
       },
+    subido : function(req, res, next) {
+        res.send('Producto subido!');
+      },
     carrito : function(req, res, next) {
         res.render('carrito');
       }

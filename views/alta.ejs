@@ -32,11 +32,10 @@
         </div>
       </form>
   </form>
-  <form>
-    <div class="form-group">
-      <label for="exampleFormControlFile1"></label>
-      <input type="file" class="form-control-file" id="exampleFormControlFile1">
-    </div>
+  <form method="POST" action="/products/alta" enctype="multipart/form-data">
+    <label for="">Imagen</label>
+    <input type="file" name="imagen">
+    <input type="submit" value="subir">
   </form>
   <%-include("./partials/footer") %>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
