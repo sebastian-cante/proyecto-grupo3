@@ -35,21 +35,30 @@ let controller = {
         res.render('login');
     },
     logued : function(req, res, next){
-        let usersFile = fs.readFileSync('users.json', {encoding : 'utf-8'})
-        let users
-        if(usersFile == ""){
-            users = []
-        }
-        else{
-            users = JSON.parse(usersFile)
-        }
-        for(let i=0; i<users.length; i++){
-            if(req.body.email == users[i].email && bcrypt.compareSync(req.body.password, users[i].password)){
-                res.redirect('../')
+        let errors = validationResult(req)
+        if (errors.isEmpty()){
+            let usersFile = fs.readFileSync('users.json', {encoding : 'utf-8'})
+            let users
+            if(usersFile == ""){
+                users = []
             }
             else{
-                res.redirect('./login')
+                users = JSON.parse(usersFile)
             }
+            let userLoging
+            for(let i=0; i<users.length; i++){
+                if(req.body.email == users[i].email && bcrypt.compareSync(req.body.password, users[i].password)){
+                    userLoging = users[i]
+                    break
+                }
+            }
+            if(userLoging == undefined){
+                return res.render('login', {errors : [{msg : "El email o la contraseña son inválidos"}]})
+            }
+            req.session.userLogued = userLoging
+            res.render('index')
+        }else {
+            return res.render('login', {errors : errors.errors})
         }
     },
     contact : function(req, res, next) {
