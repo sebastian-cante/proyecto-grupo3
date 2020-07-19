@@ -11,6 +11,7 @@ let controller = {
         let errors = validationResult(req)
         if(errors.isEmpty()){
             let user = {
+                user : req.body.user,
                 email : req.body.email,
                 password : bcrypt.hashSync(req.body.password, 10),
             }
