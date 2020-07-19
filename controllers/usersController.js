@@ -26,6 +26,8 @@ let controller = {
             users.push(user)
             usersJson = JSON.stringify(users)
             fs.writeFileSync('users.json', usersJson)
+            delete user.password;
+            req.session.userLoggued = user
             res.redirect('../')
         }
         else{
@@ -53,11 +55,12 @@ let controller = {
                     break
                 }
             }
+            delete userLoging.password;
             if(userLoging == undefined){
                 return res.render('login', {errors : [{msg : "El email o la contraseña son inválidos"}]})
             }
             req.session.userLoggued = userLoging
-            res.render('index')
+            res.redirect('../')
         }else {
             return res.render('login', {errors : errors.errors})
         }
