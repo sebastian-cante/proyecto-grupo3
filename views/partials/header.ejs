@@ -14,17 +14,17 @@
                 <a href="../products/carrito" class="icon" class="col-1"><i class="fas fa-shopping-cart" ></i></a>
             </div>
         </div>
-        
+        <div class="nombre_usuario">
+          <% if(userData != undefined) { %>
+            <%= userData.user %> <button value="submit">Cerrar sesion</button>
+          <% }else{ %>
+            <a href="./users/login">Iniciar sesion</a>
+          <% } %>
+        </div>
     </div>
     
   
-    <div class="nombre_usuario">
-      <% if(userData != undefined) { %>
-        <%= userData.user %>
-      <% }else{ %>
-        <a href="./users/login">Iniciar sesion</a>
-      <% } %>
-    </div>
+
 
     
     
