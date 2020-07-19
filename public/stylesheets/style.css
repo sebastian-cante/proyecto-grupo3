@@ -136,3 +136,13 @@ body {
   margin-left: 40px
 }
 
+.titulo_principal{
+  font-family: 'Anton', sans-serif;
+  letter-spacing: 5px;
+}
+
+.nav-item{
+  font-family: 'Anton', sans-serif;
+  letter-spacing: 3px;
+  margin-left: 30px;
+}
