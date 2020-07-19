@@ -11,7 +11,7 @@ let controller = {
         res.render('alta');
       },
     subido : function(req, res, next) {
-        res.send('Producto subido!');
+        res.render('producto_subido');
       },
     carrito : function(req, res, next) {
         res.render('carrito');
