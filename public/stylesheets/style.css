@@ -68,8 +68,11 @@ body {
 }
 
 .nav-item{
-   margin: 0 100px 0 100px;
-  
+  padding-right: 10px;
+}
+
+.contact{
+  margin-right: 0px;
 }
 
 
@@ -125,7 +128,7 @@ body {
   width: 5%;
   margin-left: 2%;
   font-size: 30px
-
+}
 .form-control{
   width: 25%;
 }

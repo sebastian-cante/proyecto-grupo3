@@ -8,6 +8,7 @@ var session = require('express-session');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var productsRouter= require('./routes/products');
+const usernameMiddleware = require('./middlewares/userNameMiddleware');
 
 
 var app = express();
@@ -22,6 +23,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({secret : "our secret", resave: false, saveUninitialized: true}));
+app.use(usernameMiddleware);
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

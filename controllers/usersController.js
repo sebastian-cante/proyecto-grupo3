@@ -56,7 +56,7 @@ let controller = {
             if(userLoging == undefined){
                 return res.render('login', {errors : [{msg : "El email o la contraseña son inválidos"}]})
             }
-            req.session.userLogued = userLoging
+            req.session.userLoggued = userLoging
             res.render('index')
         }else {
             return res.render('login', {errors : errors.errors})

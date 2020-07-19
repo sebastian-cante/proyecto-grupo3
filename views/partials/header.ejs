@@ -18,7 +18,13 @@
     </div>
     
   
-    <div class="nombre_usuario"><button>Boton</button></div>
+    <div class="nombre_usuario">
+      <% if(userData != undefined) { %>
+        <%= userData.user %>
+      <% }else{ %>
+        <a href="./users/login">Iniciar sesion</a>
+      <% } %>
+    </div>
 
     
     
@@ -34,7 +40,7 @@
     <a class="nav-item nav-link" href="../products">Productos</a>
     <a class="nav-item nav-link" href="../users/register">Registrarse</a>
     <a class="nav-item nav-link" href="../users/login">Ingresar</a>
-    <a class="nav-item nav-link" href="../users/contacto">Contacto</a>
+    <a class="nav-item nav-link" class="contact" href="../users/contacto">Contacto</a>
     
     
   </div>
