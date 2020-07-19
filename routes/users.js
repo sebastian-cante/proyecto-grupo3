@@ -37,4 +37,6 @@ router.post('/login', usersController.logued)
 
 router.get('/contacto', usersController.contact);
 
+router.get('/logout', usersController.logout)
+
 module.exports = router;

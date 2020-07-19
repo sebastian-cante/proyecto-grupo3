@@ -26,9 +26,7 @@ let controller = {
             users.push(user)
             usersJson = JSON.stringify(users)
             fs.writeFileSync('users.json', usersJson)
-            delete user.password;
-            req.session.userLoggued = user
-            res.redirect('../')
+            res.redirect('/users/login')
         }
         else{
             return res.render('register', {errors : errors.errors})
@@ -67,6 +65,10 @@ let controller = {
     },
     contact : function(req, res, next) {
         res.render('contact');
+    },
+    logout : function(req, res, next) {
+        req.session.destroy()
+        res.redirect('/')
     }
     
 }

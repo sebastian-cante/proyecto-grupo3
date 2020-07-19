@@ -18,9 +18,9 @@
         </div>
         <div class="nombre_usuario">
           <% if(userData != undefined) { %>
-            <%= userData.user %> <button value="submit">Cerrar sesion</button>
+            <%= userData.user %> <a href="/users/logout"><button>Cerrar sesion</button></a>
           <% }else{ %>
-            <a href="./users/login">Iniciar sesion</a>
+            <a href="/users/login">Iniciar sesion</a>
           <% } %>
         </div>
     </div>
