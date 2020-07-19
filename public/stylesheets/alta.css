@@ -19,13 +19,13 @@ element.style {
 }
 
 .form-group{
-  width: 30%;
+  width: 70%;
   padding-left: 15px;
 }
 
 .campo_chico{
   padding-left: 15px;
-  width: 10%;
+  width: 20%;
   margin-bottom: 1rem;
 }
 
