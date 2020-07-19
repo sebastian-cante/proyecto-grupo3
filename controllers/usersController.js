@@ -67,6 +67,10 @@ let controller = {
     },
     contact : function(req, res, next) {
         res.render('contact');
+    },
+    logout : function(req, res, next) {
+        req.session.destroy()
+        res.redirect('/')
     }
     
 }
