@@ -22,7 +22,7 @@ router.get('/detalle', productsController.detail);
 
 router.get('/alta', productsController.alta);
 
-router.post('/alta', upload.any(), productsController.subido);
+router.post('/alta', upload.any(), productsController.create);
 
 router.get('/carrito', authMiddleware, productsController.carrito);
 

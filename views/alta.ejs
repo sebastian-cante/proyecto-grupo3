@@ -14,27 +14,27 @@
 
     <br>
 
-    <form method="POST">
+    <form class="form-group" method="POST" action="/products/alta" enctype="multipart/form-data">
       <div class="form-group">
         <label for="nombre"> <b> Nombre del Producto </b></label>
-        <input type="text" class="form-control" id="nombre" placeholder="Escriba el nombre del producto">
+        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Escriba el nombre del producto">
       </div>
      
 
       <div class="form-group">
         <label for="exampleFormControlTextarea1"><b> Detalle del Producto </b></label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Escriba una descripción del producto" rows="3"></textarea>
+        <textarea class="form-control" id="exampleFormControlTextarea1" name="detalle" placeholder="Escriba una descripción del producto" rows="3"></textarea>
       </div>
 
       <div class="campo_chico">
         <label for="precio"> <b> Precio </b></label>
         <span>$</span>
-        <input type="number" class="form-control" id="precio" placeholder="0">
+        <input type="number" class="form-control" id="precio" name="precio" placeholder="0">
       </div>
 
       <div class="campo_chico">
         <label for="exampleFormControlSelect1"><b> Stock a añadir </b></label>
-        <select class="form-control" id="exampleFormControlSelect1">
+        <select class="form-control" id="exampleFormControlSelect1" name="stock">
           <option>1</option>
           <option>2</option>
           <option>3</option>
@@ -47,22 +47,23 @@
           <option>10</option>
         </select>
       </div>
-           
-    </form>
 
-
-
-  <form class="form-group" method="POST" action="/products/alta" enctype="multipart/form-data">
-    <label for="suba_imagen"><b> Agregar Imagen </b></label>
+      <div class="form-group">
+      <label for="suba_imagen"><b> Agregar Imagen </b></label>
     <br>
     <input type="file" name="imagen">
     <br>
     <br>
+    </div>
 
     <div class="submit">
     <input type="submit" value="Añadir producto">
     </div>
-  </form>
+  
+    </form>
+
+
+  
 
 
   <%-include("./partials/footer") %>
