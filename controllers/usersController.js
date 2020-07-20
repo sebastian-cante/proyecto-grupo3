@@ -11,6 +11,7 @@ let controller = {
         let errors = validationResult(req)
         if(errors.isEmpty()){
             let user = {
+                user : req.body.user,
                 email : req.body.email,
                 password : bcrypt.hashSync(req.body.password, 10),
             }
@@ -25,7 +26,7 @@ let controller = {
             users.push(user)
             usersJson = JSON.stringify(users)
             fs.writeFileSync('users.json', usersJson)
-            res.redirect('../')
+            res.redirect('/users/login')
         }
         else{
             return res.render('register', {errors : errors.errors})
@@ -52,17 +53,22 @@ let controller = {
                     break
                 }
             }
+            delete userLoging.password;
             if(userLoging == undefined){
                 return res.render('login', {errors : [{msg : "El email o la contraseña son inválidos"}]})
             }
-            req.session.userLogued = userLoging
-            res.render('index')
+            req.session.userLoggued = userLoging
+            res.redirect('../')
         }else {
             return res.render('login', {errors : errors.errors})
         }
     },
     contact : function(req, res, next) {
         res.render('contact');
+    },
+    logout : function(req, res, next) {
+        req.session.destroy()
+        res.redirect('/')
     }
     
 }

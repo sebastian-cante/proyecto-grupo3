@@ -3,17 +3,36 @@
     padding: 0;
     box-sizing: border-box;
 }
-
-
   
-  .title {
+.title {
     text-align: center;
   }
-  element.style {
+
+element.style {
     box-sizing: border-box;
     width: 90%;
 }
+
 .registro {
     background-color: palegreen;
     
+}
+
+.form-group{
+  width: 85%;
+  padding-left: 15px;
+}
+
+.campo_chico{
+  padding-left: 15px;
+  width: 25%;
+  margin-bottom: 1rem;
+}
+
+.submit{
+  padding-left: 78%;
+}
+
+.producto_subido{
+  padding-left: 15px;
 }

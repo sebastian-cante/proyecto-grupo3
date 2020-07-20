@@ -1,11 +1,18 @@
 body {
-  background-color: lightgrey; 
+  background-color: #1A1A1A;
+  color: white; 
 }
 
 .titulo {
   text-align: center;
-  background-color: lightgray;
   width: 85%;
+  margin-top: -120px;
+}
+
+.titulo_contenido {
+  text-align: center;
+  width: 100%;
+  color: white;
 }
 
 .contenedor_search {
@@ -16,7 +23,7 @@ body {
 /* Main Header */
 .main-header {
   padding: 15px 0;
-  background-color: lightgray;
+  background-color: 1A1A1A;
 }
 
 .main-header_home-link,
@@ -35,8 +42,7 @@ body {
   position: relative;
   display: flex;
   align-items: center;
-  margin-left: 225px; 
-  width: 70%;
+  width: 85%;
   
 }
 
@@ -68,13 +74,19 @@ body {
 }
 
 .nav-item{
-   margin: 0 100px 0 100px;
-  
+  padding-right: 10px;
+}
+
+.contact{
+  margin-right: 0px;
 }
 
 
 .logo {
   width: 15%;
+  display: inline-block;
+  
+
 }
 
 
@@ -85,11 +97,23 @@ body {
 
 .card-body{
   background-color: lightgray;
+  margin-top: 0;
+  padding-bottom: 2px;
+  
+}
+
+.card-body .redes{
+  padding-top: 0;
   
 }
 
 .card-body-products{
-  background-color: royalblue;
+  background-color: lightgray;
+  
+}
+
+.card.text-center {
+  margin-top: 80px;
   
 }
 
@@ -125,10 +149,37 @@ body {
   width: 5%;
   margin-left: 2%;
   font-size: 30px
-
+}
 .form-control{
   width: 25%;
 }
 .formulario{
   margin-left: 40px
+}
+
+.titulo_principal{
+  font-family: 'Anton', sans-serif;
+  letter-spacing: 5px;
+  color: white;
+  
+  
+}
+
+.nav-item{
+  font-family: 'Anton', sans-serif;
+  letter-spacing: 3px;
+  margin-left: 30px;
+}
+
+.card {
+  font-family: 'Anton', sans-serif;
+  margin-top: 20px;
+  margin-left: 0;
+  width: 100%;
+  background-color: #f8f9fa;
+  color: rgba(0,0,0,.5);
+}
+
+.link_producto {
+  color: #fff;
 }
