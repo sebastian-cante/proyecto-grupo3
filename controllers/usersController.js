@@ -39,7 +39,7 @@ let controller = {
     logued : function(req, res, next){
         let errors = validationResult(req)
         if (errors.isEmpty()){
-            let usersFile = fs.readFileSync('users.json', {encoding : 'utf-8'})
+/*          let usersFile = fs.readFileSync('users.json', {encoding : 'utf-8'})
             let users
             if(usersFile == ""){
                 users = []
@@ -59,8 +59,23 @@ let controller = {
                 return res.render('login', {errors : [{msg : "El email o la contraseña son inválidos"}]})
             }
             req.session.userLoggued = userLoging
-            res.redirect('../')
-        }else {
+            
+*/          let userLoging
+            db.Users.findAll()
+                .then(function(users){
+                    for (let i = 0; i < users.length; i++) {
+                        if(users[i].email == req.body.email && bcrypt.compareSync(req.body.password, users[i].password)){
+                            userLoging = users[i]
+                            break
+                        }
+                    }
+                    if(userLoging == undefined){
+                        return res.render('login', {errors : [{msg : "El email o la contraseña son inválidos"}]})
+                    }
+                    req.session.userLoggued = userLoging
+                    res.redirect('../')
+                })
+            }else {
             return res.render('login', {errors : errors.errors})
         }
     },
