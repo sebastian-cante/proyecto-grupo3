@@ -1,4 +1,5 @@
 const fs = require('fs');
+const db = require('../db/models')
 
 let controller = {
   products : function(req, res, next) {
