@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": null,
-    "database": "database_tecnostore",
+    "database": "tecno_store",
     "host": "127.0.0.1",
     "dialect": "mysql",
     "operatorsAliases": false
