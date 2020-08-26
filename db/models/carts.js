@@ -9,7 +9,6 @@ module.exports = (sequelize, dataTypes) => {
         total : {
             type : dataTypes.INTEGER(10).UNSIGNED,
             allowNull : false,
-
         }  
     },{
         tableName : 'carts',
@@ -28,9 +27,12 @@ module.exports = (sequelize, dataTypes) => {
         })
     }
     Carts.associate = function(models){
-        Carts.belongsTo(models.Carts_products, {
-            as: "carts_products",
-            foreignKey: "carts_products_id"
+        Carts.belongsToMany(models.Products, {
+            as : "products",
+            through : "carts_products",
+            foreignKey : "carts_id",
+            otherKey : "products_id",
+            timestamps : false
         })
     }
     return Carts

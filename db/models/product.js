@@ -19,7 +19,6 @@ module.exports = (sequelize, dataTypes) => {
         description : {
             type : dataTypes.TEXT,
             allowNull : false,
-
         }      
     },{
         tableName : 'products',
@@ -32,11 +31,11 @@ module.exports = (sequelize, dataTypes) => {
         })
     }
     Products.associate = function(models){
-        Products.belongsToMany(models.Carts_products, {
-            as : "carts_products",
-            through : "product_has_carts_products",
+        Products.belongsToMany(models.Carts, {
+            as : "carts",
+            through : "carts_products",
             foreignKey : "products_id",
-            otherKey : "carts_products_id",
+            otherKey : "carts_id",
             timestamps : false
         })
     }
