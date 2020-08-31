@@ -17,7 +17,7 @@ module.exports = {
           type: Sequelize.INTEGER.UNSIGNED,
           references: {
             model: {
-              tablename: 'users',
+              tableName: 'users',
             },
             key: 'id'
           },
@@ -26,7 +26,7 @@ module.exports = {
           type: Sequelize.INTEGER.UNSIGNED,
           references: {
             model: {
-              tablename: 'adresses',
+              tableName: 'adresses',
             },
             key: 'id'
           },
