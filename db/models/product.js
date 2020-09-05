@@ -9,18 +9,21 @@ module.exports = (sequelize, dataTypes) => {
         product_name : {
             type : dataTypes.STRING(45),
             allowNull : false,
-
+        },
+        stock : {
+            type : dataTypes.INTEGER(10).UNSIGNED,
         },
         price : {
             type : dataTypes.INTEGER(10).UNSIGNED,
             allowNull : false,
-
         },
         description : {
             type : dataTypes.TEXT,
             allowNull : false,
-        }   
-           
+        },
+        image : {
+            type : dataTypes.STRING(200),
+        }      
     },{
         tableName : 'products',
         timestamps : false

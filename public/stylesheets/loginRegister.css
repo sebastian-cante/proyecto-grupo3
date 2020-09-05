@@ -1,6 +1,18 @@
 .form-control{
-    width: 25%;
+    width: 25%
 }
 .formulario{
     margin-left: 40px
+}
+.error{
+    border: 1px solid red
+}
+.success{
+    border: 1px solid rgb(3, 245, 3)
+}
+.hide{
+    display: none
+}
+.show{
+    display: inline-block
 }
