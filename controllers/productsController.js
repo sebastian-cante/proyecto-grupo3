@@ -11,7 +11,18 @@ let controller = {
   alta : function(req, res, next) {
     res.render('alta');
   },
-  create : function(req, res, next) {
+ create : function(req, res, next){
+    let errors = validationResult(req)
+    if(errors.isEmpty()){
+        db.products.create({
+          product_name : req.body.nombre,
+          price : req.body.precio,
+          description : req.body.detalle,
+        }) 
+      }  
+      res.render("producto_subido");
+    }, 
+ /* create : function(req, res, next) {
     let producto = {
       nombre: req.body.nombre,
       detalle: req.body.detalle,
@@ -20,7 +31,7 @@ let controller = {
       imagen: req.files[0].filename,
     };
     
-    let productsFile = fs.readFileSync('products.json', {encoding : 'utf-8'})
+   let productsFile = fs.readFileSync('products.json', {encoding : 'utf-8'})
     let products
     if(productsFile == ""){
       products = []
@@ -34,10 +45,12 @@ let controller = {
     fs.writeFileSync('products.json', productsJson)
     
     res.render("producto_subido");
-  },
+  },*/
   carrito : function(req, res, next) {
     res.render('carrito');
   }
-}
+   
+ }
 
+    
 module.exports = controller

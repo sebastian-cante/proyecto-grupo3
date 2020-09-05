@@ -19,7 +19,8 @@ module.exports = (sequelize, dataTypes) => {
         description : {
             type : dataTypes.TEXT,
             allowNull : false,
-        }      
+        }   
+           
     },{
         tableName : 'products',
         timestamps : false
