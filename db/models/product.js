@@ -9,17 +9,20 @@ module.exports = (sequelize, dataTypes) => {
         product_name : {
             type : dataTypes.STRING(45),
             allowNull : false,
-
+        },
+        stock : {
+            type : dataTypes.INTEGER(10).UNSIGNED,
         },
         price : {
             type : dataTypes.INTEGER(10).UNSIGNED,
             allowNull : false,
-
         },
         description : {
             type : dataTypes.TEXT,
             allowNull : false,
-
+        },
+        image : {
+            type : dataTypes.STRING(200),
         }      
     },{
         tableName : 'products',
@@ -32,11 +35,11 @@ module.exports = (sequelize, dataTypes) => {
         })
     }
     Products.associate = function(models){
-        Products.belongsToMany(models.Carts_products, {
-            as : "carts_products",
-            through : "product_has_carts_products",
+        Products.belongsToMany(models.Carts, {
+            as : "carts",
+            through : "carts_products",
             foreignKey : "products_id",
-            otherKey : "carts_products_id",
+            otherKey : "carts_id",
             timestamps : false
         })
     }

@@ -9,7 +9,6 @@ module.exports = (sequelize, dataTypes) => {
         name : {
             type : dataTypes.STRING(45),
             allowNull : false,
-
         }    
     },{
         tableName : 'categories',
