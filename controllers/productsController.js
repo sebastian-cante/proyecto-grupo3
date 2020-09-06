@@ -1,5 +1,7 @@
 const fs = require('fs');
 const db = require('../db/models')
+const {check, validationResult, body } = require('express-validator');
+
 
 let controller = {
   products : function(req, res, next) {
@@ -14,13 +16,18 @@ let controller = {
  create : function(req, res, next){
     let errors = validationResult(req)
     if(errors.isEmpty()){
-        db.products.create({
+        db.Products.create({
           product_name : req.body.nombre,
           price : req.body.precio,
           description : req.body.detalle,
+          stock : req.body.stock,
+          image : req.files[0].filename
         }) 
+        res.render("producto_subido");
       }  
-      res.render("producto_subido");
+      else{
+        return res.render("alta", {errors: errors.errors})
+      }
     }, 
  /* create : function(req, res, next) {
     let producto = {

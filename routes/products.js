@@ -21,16 +21,29 @@ router.get('/', productsController.products);
 
 router.get('/detalle/', productsController.detail);
 
-router.get('/alta', productsController.alta);
+router.get('/alta',authMiddleware, productsController.alta);
 
 router.post('/alta',[
-      check('nombre').isLength({min : 1}).withMessage('El campo no puede estar vacio'),
-      check('detalle').isLength({min : 20}).withMessage('El campo no puede estar vacio'),
-      check('precio').isInt({min : 0}).withMessage('El campo no puede estar vacio'),
-      check('stock').isInt({min : 0}).withMessage('El campo no puede estar vacio'),
+      check('nombre').isLength({min : 1}).withMessage('El campo nombre no puede estar vacio'),
+      check('detalle').isLength({min : 20}).withMessage('La descripción del producto debe contener al menos 20 caracteres'),
+      check('precio').isInt({min : 0}).withMessage('El campo de precio debe ser completado'),
+      check('stock').isInt({min : 0}).withMessage('El campo stock debe ser mayor a 0'),
       check('imagen')
 
 ], upload.any(), productsController.create);
+
+//a partir de acá agrego código nuevo para dropzone
+
+router.post('/alta', [upload.single('photos')], function(req, res){
+  
+  res.json({url: '/uploads/' + req.filename})
+})
+
+
+
+
+
+//hasta acá agrego código para dropzone
 
 router.get('/carrito', authMiddleware, productsController.carrito);
 

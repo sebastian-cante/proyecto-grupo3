@@ -7,23 +7,38 @@
     <link rel="stylesheet" href="/css/bootstrap-grid.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <link rel='stylesheet' href='/stylesheets/style.css' />
-    <link rel='stylesheet' href='/stylesheets/alta.css' />  
+    <link rel='stylesheet' href='/stylesheets/alta.css' />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/min/dropzone.min.js" integrity="sha512-9WciDs0XP20sojTJ9E7mChDXy6pcO0qHpwbEJID1YVavz2H6QBz5eLoDD8lseZOb2yGT8xDNIV7HIe1ZbuiDWg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/dropzone.min.css" integrity="sha512-3g+prZHHfmnvE1HBLwUnVuunaPOob7dpksI7/v6UnF/rnKGwHf/GdEq9K7iEN7qTtW+S0iivTcGpeTBqqB04wA==" crossorigin="anonymous" />
+      
   </head>
   <body>
     <%- include('./partials/header') %>
 
     <br>
 
-    <form class="form-group" method="POST" action="/products/alta" enctype="multipart/form-data">
+    <ul>
+      <% if(typeof errors != 'undefined') { %>      
+          <% for(let i=0; i < errors.length; i++) { %>
+            <li>
+              <%= errors[i].msg %>
+            </li>
+          <% } %>
+      <% } %>
+      </ul>
+
+    <form class="form-group dropzone" method="POST" action="/products/alta" enctype="multipart/form-data" id="altaForm">
       <div class="form-group">
         <label for="nombre"> <b> Nombre del Producto </b></label>
         <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Escriba el nombre del producto">
+        <span class="hide">El nombre del producto debe ser de al menos 5 caracteres.</span>
       </div>
      
 
       <div class="form-group">
         <label for="exampleFormControlTextarea1"><b> Detalle del Producto </b></label>
         <textarea class="form-control" id="exampleFormControlTextarea1" name="detalle" placeholder="Escriba una descripción del producto" rows="3"></textarea>
+        <span class="hide">El detalle debe tener al menos 20 caracteres.</span>
       </div>
 
       <div class="campo_chico">
@@ -48,7 +63,7 @@
         </select>
       </div>
 
-      <div class="form-group">
+      <div class="form-group photos">
       <label for="suba_imagen"><b> Agregar Imagen </b></label>
     <br>
     <input type="file" name="imagen">
@@ -67,8 +82,19 @@
 
 
   <%-include("./partials/footer") %>
+  <script> 
+      
+
+    let dz = new Dropzone('div#photos', {
+      url : '/alta',
+      paramName: 'photos'
+    })
+
+</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/validator/13.1.1/validator.min.js" integrity="sha512-rVYlbsnsxljzvf4sgKzI6ncbNKKxupFhoQ/9ptW7R5fhKE9wQevsfUAZEbJ6xl+VyaiGm3lAKChPLoV/VuaZJA==" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  <script src="/jsFront/alta.js"> </script>
 </body>
 </html>
