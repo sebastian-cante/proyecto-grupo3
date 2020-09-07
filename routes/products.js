@@ -27,7 +27,7 @@ router.get('/alta',authMiddleware, productsController.categoria)
 
 
 
-router.post('/alta',[upload.single('imagen'),
+router.post('/alta',upload.any(),[
       check('nombre').isLength({min : 1}).withMessage('El campo nombre no puede estar vacio'),
       check('detalle').isLength({min : 20}).withMessage('La descripción del producto debe contener al menos 20 caracteres'),
       check('precio').isInt({min : 0}).withMessage('El campo de precio debe ser completado'),

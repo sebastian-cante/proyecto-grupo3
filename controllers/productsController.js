@@ -31,7 +31,7 @@ let controller = {
           description : req.body.detalle,
           stock : req.body.stock,
           category_id : req.body.categoria,
-          //image : req.files[0].filename
+          image : req.files[0].filename
         }) 
         res.render("producto_subido");
       }  
