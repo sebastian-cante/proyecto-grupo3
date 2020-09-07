@@ -1,5 +1,6 @@
 const fs = require('fs');
 const db = require('../db/models')
+var multer  = require('multer')
 const {check, validationResult, body } = require('express-validator');
 
 
@@ -21,7 +22,8 @@ let controller = {
           price : req.body.precio,
           description : req.body.detalle,
           stock : req.body.stock,
-          image : req.files[0].filename
+          category_id : req.body.categoria
+          //image : req.files[0].filename
         }) 
         res.render("producto_subido");
       }  

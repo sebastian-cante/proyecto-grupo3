@@ -19,25 +19,27 @@ var storage = multer.diskStorage({
 
 router.get('/', productsController.products);
 
+
 router.get('/detalle/', productsController.detail);
 
 router.get('/alta',authMiddleware, productsController.alta);
 
-router.post('/alta',[
+router.post('/alta',[upload.single('imagen'),
       check('nombre').isLength({min : 1}).withMessage('El campo nombre no puede estar vacio'),
       check('detalle').isLength({min : 20}).withMessage('La descripción del producto debe contener al menos 20 caracteres'),
       check('precio').isInt({min : 0}).withMessage('El campo de precio debe ser completado'),
-      check('stock').isInt({min : 0}).withMessage('El campo stock debe ser mayor a 0'),
-      check('imagen')
+      check('stock').isInt({min : 0}).withMessage('El campo stock debe ser mayor a 0')
 
-], upload.any(), productsController.create);
+], productsController.create);
+
+
 
 //a partir de acá agrego código nuevo para dropzone
 
-router.post('/alta', [upload.single('photos')], function(req, res){
+//router.post('/alta', [upload.single('photos')], function(req, res){
   
-  res.json({url: '/uploads/' + req.filename})
-})
+//  res.json({url: '/uploads/' + req.filename})
+//})
 
 
 
