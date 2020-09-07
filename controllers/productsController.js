@@ -5,8 +5,12 @@ const {check, validationResult, body } = require('express-validator');
 
 
 let controller = {
-  products : function(req, res, next) {
-    res.render('products');
+  listado : function(req, res) {
+    db.Products.findAll()
+    .then(function(products){
+      res.render('products', {products:products});
+    })
+    
   },
   detail : function(req, res, next) {
     res.render('detalle');
@@ -26,7 +30,7 @@ let controller = {
           price : req.body.precio,
           description : req.body.detalle,
           stock : req.body.stock,
-          category_id : req.body.categoria
+          category_id : req.body.categoria,
           //image : req.files[0].filename
         }) 
         res.render("producto_subido");
