@@ -64,10 +64,12 @@
       <div class="campo_chico">
         <label for="exampleFormControlSelect1"><b> Categoría del Producto </b></label>
         <select class="form-control" id="exampleFormControlSelect1" name="categoria">
-          <option>Periféricos</option>
-          <option>Monitores</option>
-          <option>Hardware</option>
-          <option>Portátiles</option>
+          <% for (let i = 0; i < categories.length; i++){ %>
+           <option value="<%=categories[i].id%>">
+            <%=categories[i].name%>
+          </option>
+
+          <%}%>
           </select>
       </div>
 

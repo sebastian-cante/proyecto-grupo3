@@ -22,7 +22,10 @@ router.get('/', productsController.products);
 
 router.get('/detalle/', productsController.detail);
 
-router.get('/alta',authMiddleware, productsController.alta);
+router.get('/alta',authMiddleware, productsController.categoria)
+
+
+
 
 router.post('/alta',[upload.single('imagen'),
       check('nombre').isLength({min : 1}).withMessage('El campo nombre no puede estar vacio'),

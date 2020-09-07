@@ -11,8 +11,12 @@ let controller = {
   detail : function(req, res, next) {
     res.render('detalle');
   },
-  alta : function(req, res, next) {
-    res.render('alta');
+  categoria : function(req, res) {
+    db.Categories.findAll()
+      .then(function(categories){
+          return res.render('alta', {categories:categories})
+      })
+    
   },
  create : function(req, res, next){
     let errors = validationResult(req)
