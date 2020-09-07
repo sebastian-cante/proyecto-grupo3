@@ -36,3 +36,16 @@ element.style {
 .producto_subido{
   padding-left: 15px;
 }
+
+.error{
+  border: 1px solid red
+}
+.success{
+  border: 1px solid rgb(3, 245, 3)
+}
+.hide{
+  display: none
+}
+.show{
+  display: inline-block
+}

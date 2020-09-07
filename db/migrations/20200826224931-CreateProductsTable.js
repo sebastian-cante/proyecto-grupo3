@@ -31,12 +31,13 @@ module.exports = {
         },
         category_id: {
           type: Sequelize.INTEGER.UNSIGNED,
-          references: {
+         /* references: {
             model: {
-              tableName: 'category',
+              tableName: 'categories',
+              schema:'tecno_store'
             },
             key: 'id'
-          },
+          },*/
         }
       });
   },

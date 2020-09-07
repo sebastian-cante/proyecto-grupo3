@@ -18,7 +18,7 @@ window.onload = function(){
     })
     form.user.addEventListener('keyup', function(e){
         data.user = e.target.value
-        if(data.user.length > 2){
+        if(data.user.length >= 2){
             this.nextElementSibling.classList.replace('show', 'hide')
         }
         else{
@@ -27,7 +27,7 @@ window.onload = function(){
     })
     form.password.addEventListener('keyup', function(e){
         data.password = e.target.value
-        if(data.password.length > 8){
+        if(data.password.length >= 8){
             this.nextElementSibling.classList.replace('show', 'hide')
         }
         else{

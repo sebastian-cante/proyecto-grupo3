@@ -1,102 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>TECNO-STORE</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/bootstrap-grid.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <link rel="stylesheet" href="/stylesheet/detalle.css" />
-    
-  </head>
-  <body>
-    <%- include('./partials/header') %>
-
-
-    <div class="container">   
-      <div class="card-deck mt-3">
+<head>
+  <title>TECNO-STORE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel="stylesheet" href="/stylesheet/detalle.css" />
   
-        <div class="card text-center border-info">
-          <div class="card-body">
-            <h4 class="card-title">WEBCAM LOGITECH C270 HD</h4>
-            <img class="card-img-top" src="\images\c270-hd-webcam-refresh.png">
-            <p class="card-text"></p> <br>
-             <h4>$8999.00</h4>
-            <br>
-            <a href="/products/detalle" class="btn btn-primary">Ver Producto</a>
-          </div>
-        </div>          
+</head>
+<body>
+  <%- include('./partials/header') %>
   
-        <div class="card text-center border-info">
-          <div class="card-body">
-            <h4 class="card-title">Teclado Logitech K375</h4>
-            <img class="card-img-top" src="images/teclado_k375.png">
-            <p class="card-text"></p> <br>
-            <h4>$2249.00</h4>
-                <br>
-            <a href="/products/detalle" class="btn btn-primary">Ver Producto</a>
-          </div>
-        </div>          
-    
-        <div class="card text-center border-info">
-          <div class="card-body">
-            <h4 class="card-title">WIRELESS KEYBOARD K270</h4>
-            <img class="card-img-top" src="\images\k270-gallery.png">
-            <p class="card-text"></p> <br>
-            <h4>$2299.00</h4>
-                <br>
-            <a href="/products/detalle" class="btn btn-primary">Ver Producto</a>
-          </div>
-        </div>          
   
-      </div>
-    </div> 
-    <div class="container">   
-      <div class="card-deck mt-3">
-  
-        <div class="card text-center border-info">
-          <div class="card-body">
-            <h4 class="card-title">Titulo de la tarjeta 1</h4>
-            <img class="card-img-top" src="\images\c270-hd-webcam-refresh.png">
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lectus sem, 
-                                  tempor vitae mattis malesuada, ornare sed erat. Pellentesque nulla dui, congue
-                                  nec tortor sit amet, maximus mattis dui. </p>
+  <!-- <div class="container">   
+    <div class="card-deck mt-3">
+      
+      <div class="card text-center border-info">
+        
+        <div class="card-body">
+          <h4 class="card-title">WEBCAM LOGITECH C270 HD</h4>
+          <img class="card-img-top" src="\images\c270-hd-webcam-refresh.png">
+          <p class="card-text"></p> <br>
+          <h4>$8999.00</h4>
+          <br>
+          <a href="/products/detalle" class="btn btn-primary">Ver Producto</a>
+        </div>
+      </div>          
+      
+      <div class="card text-center border-info">
+        <div class="card-body">
+          <h4 class="card-title">Teclado Logitech K375</h4>
+          <img class="card-img-top" src="images/teclado_k375.png">
+          <p class="card-text"></p> <br>
+          <h4>$2249.00</h4>
+          <br>
+          <a href="/products/detalle" class="btn btn-primary">Ver Producto</a>
+        </div>
+      </div>          
+      
+      <div class="card text-center border-info">
+        <div class="card-body">
+          <h4 class="card-title">WIRELESS KEYBOARD K270</h4>
+          <img class="card-img-top" src="\images\k270-gallery.png">
+          <p class="card-text"></p> <br>
+          <h4>$2299.00</h4>
+          <br>
+          <a href="/products/detalle" class="btn btn-primary">Ver Producto</a>
+        </div>
+      </div>          
+      
+    </div>
+  </div> 
+  <div class="container">   
+    <div class="card-deck mt-3">
+      
+      <div class="card text-center border-info">
+        <div class="card-body">
+          <h4 class="card-title">Titulo de la tarjeta 1</h4>
+          <img class="card-img-top" src="\images\c270-hd-webcam-refresh.png">
+          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lectus sem, 
+            tempor vitae mattis malesuada, ornare sed erat. Pellentesque nulla dui, congue
+            nec tortor sit amet, maximus mattis dui. </p>
             <a href="/products/detalle" class="btn btn-primary">Entrar</a>
           </div>
         </div>          
-  
+        
         <div class="card text-center border-info">
           <div class="card-body">
             <h4 class="card-title">Titulo de la tarjeta 2</h4>
             <img class="card-img-top" src="\images\c270-hd-webcam-refresh.png">
             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lectus sem, 
-                                  tempor vitae mattis malesuada, ornare sed erat. Pellentesque nulla dui, congue
-                                  nec tortor sit amet, maximus mattis dui. </p>
-            <a href="/products/detalle" class="btn btn-primary">Entrar</a>
+              tempor vitae mattis malesuada, ornare sed erat. Pellentesque nulla dui, congue
+              nec tortor sit amet, maximus mattis dui. </p>
+              <a href="/products/detalle" class="btn btn-primary">Entrar</a>
+            </div>
+          </div>          
+          
+          <div class="card text-center border-info">
+            <div class="card-body">
+              <h4 class="card-title">Titulo de la tarjeta 3</h4>
+              <img class="card-img-top" src="\images\c270-hd-webcam-refresh.png">
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lectus sem, 
+                tempor vitae mattis malesuada, ornare sed erat. Pellentesque nulla dui, congue
+                nec tortor sit amet, maximus mattis dui. </p>
+                <a href="/products/detalle" class="btn btn-primary">Entrar</a>
+              </div>
+            </div>          
+            
           </div>
-        </div>          
-    
-        <div class="card text-center border-info">
-          <div class="card-body">
-            <h4 class="card-title">Titulo de la tarjeta 3</h4>
-            <img class="card-img-top" src="\images\c270-hd-webcam-refresh.png">
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lectus sem, 
-                                  tempor vitae mattis malesuada, ornare sed erat. Pellentesque nulla dui, congue
-                                  nec tortor sit amet, maximus mattis dui. </p>
-            <a href="/products/detalle" class="btn btn-primary">Entrar</a>
-          </div>
-        </div>          
-  
-      </div>
-    </div> 
+        </div>  -->
+        <!-- <div class="container">
+          <div class="card-deck mt-3">
+            <div class="card" style="width: 18rem;">
+              <% for (i = 0; i < products.length; i++){ %>
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h4 class="card-title"><%=products[i].title%></h4>
+                  <p class="card-text"><%=products[i].description%></p>
+                  <h5 class="card-text"><%=products[i].price%></h5>
+                
+                  
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                  
+                </div>
+                <br>
+                
+                <%}%>
+              </div>
+            </div>
+            
+          </div> -->
 
+          <section id="info-one">
+            <div class="container mt-5 ">
+              <div class="row mt-5">
+                <% for (i = 0; i < products.length; i++){ %>
+                <div class="col-md-6">
+                  <div class="info-left">
+                    <img src="<%=products[i].image%>" style="width: 100%">
+                  </div>
+                </div>
+                <div class="col-md-6 my-auto">
+                  <div class="info-right">
+                    <h2><%=products[i].title%></h2>
+                    <p><%=products[i].description%></p>
+                    <h5 class="card-text">$<%=products[i].price%></h5>
+                      <a href="#" ><button type="button" class="btn btn-primary">Añadir al carrito</button></a>
+                  </div>
+                </div>
 
-
-
-      <%-include("./partials/footer") %>
-      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-</body>
-</html>
+                <br>
+                <%}%>
+              </div>
+            </div>
+          </section>
+      
+          
+          
+          
+          
+          
+          <%-include("./partials/footer") %>
+          <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+          <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+          <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+        </body>
+        </html>
